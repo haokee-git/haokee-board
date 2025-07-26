@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Haokee Clipboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+      body {
+        font-family: "Inter", sans-serif;
+      }
+      .btn-primary {
+        background-color: #0ea5e9;
+        transition: all 0.3s ease;
+      }
+      .btn-primary:hover {
+        background-color: #0284c7;
+        transform: translateY(-2px);
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+      }
+      .feature-card {
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+      }
+      .feature-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+      }
+    </style>
+  </head>
+  <body class="bg-gradient-to-br from-blue-50 to-indigo-50 min-h-screen">
+    <header class="py-12 text-center">
+      <div class="max-w-4xl mx-auto px-4">
+        <h1 class="text-4xl md:text-5xl font-bold text-blue-800 mb-4">
+          Haokee Clipboard
+        </h1>
+        <p class="text-xl text-blue-600 max-w-2xl mx-auto">
+          简洁高效的 Markdown 编辑器与剪切板工具
+        </p>
+      </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 pb-16">
+      <div class="bg-white rounded-2xl shadow-xl p-6 md:p-8 mb-12">
+        <p class="text-lg text-gray-700 mb-8 leading-relaxed">
+          欢迎使用 Haokee Clipboard - 一个简洁而强大的 Markdown
+          编辑器和剪切板工具。 创建和编辑 Markdown
+          笔记，它们会自动保存并可以通过唯一链接随时访问。
+        </p>
+        <div class="text-center">
+          <button
+            onclick="createNewNote()"
+            class="btn-primary text-white font-medium py-3 px-8 rounded-full text-lg inline-flex items-center"
+          >
+            创建新笔记
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5 ml-2"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+        <div class="feature-card bg-white rounded-xl p-6 shadow-md">
+          <div class="flex items-start mb-4">
+            <div class="bg-blue-100 p-2 rounded-lg mr-4">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6 text-blue-600"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                />
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-800">
+              实时 Markdown 渲染
+            </h3>
+          </div>
+          <p class="text-gray-600">即时预览 Markdown 渲染效果，所见即所得。</p>
+        </div>
+
+        <div class="feature-card bg-white rounded-xl p-6 shadow-md">
+          <div class="flex items-start mb-4">
+            <div class="bg-green-100 p-2 rounded-lg mr-4">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6 text-green-600"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M5 13l4 4L19 7"
+                />
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-800">自动保存</h3>
+          </div>
+          <p class="text-gray-600">每 5 秒自动保存，关闭页面时额外保存一次。</p>
+        </div>
+
+        <div class="feature-card bg-white rounded-xl p-6 shadow-md">
+          <div class="flex items-start mb-4">
+            <div class="bg-purple-100 p-2 rounded-lg mr-4">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6 text-purple-600"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"
+                />
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-800">永久存储</h3>
+          </div>
+          <p class="text-gray-600">笔记永久保存，关闭浏览器后仍可访问。</p>
+        </div>
+
+        <div class="feature-card bg-white rounded-xl p-6 shadow-md">
+          <div class="flex items-start mb-4">
+            <div class="bg-yellow-100 p-2 rounded-lg mr-4">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6 text-yellow-600"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M13 10V3L4 14h7v7l9-11h-7z"
+                />
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-800">快速访问</h3>
+          </div>
+          <p class="text-gray-600">通过唯一链接随时访问您的笔记。</p>
+        </div>
+      </div>
+
+      <div class="bg-blue-50 rounded-2xl p-8 text-center">
+        <h2 class="text-2xl font-bold text-blue-800 mb-4">立即开始</h2>
+        <p class="text-blue-600 mb-6">点击下方按钮创建您的第一个笔记</p>
+        <button
+          onclick="createNewNote()"
+          class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-8 rounded-full text-lg"
+        >
+          创建新笔记
+        </button>
+      </div>
+    </main>
+
+    <footer class="py-8 text-center text-gray-600">
+      <p>© 2023 Haokee Clipboard - 让笔记更简单</p>
+    </footer>
+
+    <script>
+      function createNewNote() {
+        // 生成 8 位随机 ID
+        const noteId = Math.random().toString(36).substring(2, 10);
+        window.location.href = `/${noteId}`;
+      }
+    </script>
+  </body>
+</html>
